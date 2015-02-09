@@ -5,11 +5,11 @@
 (COMPLETE) 3 u2(String) expression -> (int[]) Minterms
 (COMPLETE) 4 u2(String) expression -> (int[]) Maxterms
 
-5 (IndexList) Minterms -> (IndexList) Maxterms
-6 (IndexList) Maxterms -> (IndexList) Minterms
+(COMPLETE){Inverse of Minterms object} 5 (IndexList) Minterms -> (IndexList) Maxterms
+(COMPLETE){Inverse of Maxterms object} 6 (IndexList) Maxterms -> (IndexList) Minterms
 
-7 (IndexList) Minterms -> (String)SoP Form
-8 (IndexList) Maxterms -> (String)Pos Form
+(COMPLETE) 7 (IndexList) Minterms -> (String)SoP Form
+(COMPLETE) 8 (IndexList) Maxterms -> (String)Pos Form
 
 9 (String) expression -> (?) K-Map Representation
 10 (IndexList) Minterms + (IndexList) DontCares -> (?) K-Map Representation

@@ -57,9 +57,61 @@ public class AlternativeForms
         return SoP;
     }
 
-    private static boolean[] termNumberToInputs(int termNumber,int variableNumber)
+
+
+    public static String getProductOfSumsString(String expression)
     {
-        boolean[] inputs = new boolean[variableNumber];
+        return getProductOfSumsString(Evaluator.getMaxterms(expression),true);
+    }
+    public static String getProductOfSumsString(IndexList maxterms, boolean explicitAnd)
+    {
+        ArrayList<String> variables = maxterms.getVariables();
+
+        String PoS = "";
+
+        for(int term : maxterms.getIndexes())
+        {
+            boolean[] line = termNumberToInputs(term,variables.size());
+
+            if(PoS.length() > 0 && explicitAnd)
+            {
+                PoS += "*";
+            }
+
+            if(line[0] == false)
+            {
+                PoS += "(" + variables.get(0);
+            }
+            else
+            {
+                PoS += "(!" + variables.get(0);
+            }
+
+            for(int i=1;i<line.length;i++)
+            {
+
+                PoS += "+";
+
+                if(line[i] == false)
+                {
+                    PoS += "" + variables.get(i);
+                }
+                else
+                {
+                    PoS +=  "!" + variables.get(i);
+                }
+            }
+            PoS += ")";
+        }
+
+        return PoS;
+    }
+
+
+
+    private static boolean[] termNumberToInputs(int termNumber,int numberOfVariables)
+    {
+        boolean[] inputs = new boolean[numberOfVariables];
         String someInputs = Integer.toString(termNumber, 2);
         for(int i =0; i<someInputs.length(); i++)
         {
@@ -71,4 +123,5 @@ public class AlternativeForms
         }
         return inputs;
     }
+
 }
