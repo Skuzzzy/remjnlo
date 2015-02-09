@@ -1,0 +1,20 @@
+(COMPLETE) 1 (String) expression + (boolean[]) inputs -> (boolean) Result
+    Enhancement: Add function parsing
+(COMPLETE) 2 u1(String) expression -> (boolean[][]) Truth Table
+
+(COMPLETE) 3 u2(String) expression -> (int[]) Minterms
+(COMPLETE) 4 u2(String) expression -> (int[]) Maxterms
+
+5 (IndexList) Minterms -> (IndexList) Maxterms
+6 (IndexList) Maxterms -> (IndexList) Minterms
+
+7 (IndexList) Minterms -> (String)SoP Form
+8 (IndexList) Maxterms -> (String)Pos Form
+
+9 (String) expression -> (?) K-Map Representation
+10 (IndexList) Minterms + (IndexList) DontCares -> (?) K-Map Representation
+11 (IndexList) Maxterms + (IndexList) DontCares -> (?) K-Map Representation
+
+12 (? input) Truth Table -> (IndexList) Minterms + (IndexList) DontCares
+13 (? input) Truth Table -> (IndexList) Maxterms + (IndexList) DontCares
+
