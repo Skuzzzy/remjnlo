@@ -27,6 +27,11 @@ public class IndexList
         return indexes;
     }
 
+    public ArrayList<String> getVariables()
+    {
+        return variables;
+    }
+
     public IndexList getOppositeIndexList()
     {
         int[] oppositeIndexes = new int[(int)Math.pow(variables.size(),2)-indexes.length];
