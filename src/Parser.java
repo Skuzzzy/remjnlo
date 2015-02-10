@@ -152,27 +152,27 @@ public class Parser
         return postfixExpression;
     }
 
-    public static boolean isValidPartOfVariable(char c)
+    private static boolean isValidPartOfVariable(char c)
     {
         return (Character.isAlphabetic(c) || Character.isDigit(c));
     }
-    public static boolean isOr(char c)
+    private static boolean isOr(char c)
     {
         return (c == '+');
     }
-    public static boolean isAnd(char c)
+    private static boolean isAnd(char c)
     {
         return (c == '*');
     }
-    public static boolean isNot(char c)
+    private static boolean isNot(char c)
     {
         return (c == '!');
     }
-    public static boolean isLeftParenthesis(char c)
+    private static boolean isLeftParenthesis(char c)
     {
         return (c == '(');
     }
-    public static boolean isRightParenthesis(char c)
+    private static boolean isRightParenthesis(char c)
     {
         return (c == ')');
     }
