@@ -18,3 +18,4 @@
 12 (? input) Truth Table -> (IndexList) Minterms + (IndexList) DontCares
 13 (? input) Truth Table -> (IndexList) Maxterms + (IndexList) DontCares
 
+Shortcut System between representations

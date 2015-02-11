@@ -36,6 +36,7 @@ public class Parser
                 if(implicitAnd)
                 {
                     tokenizedExpression.add(new AndToken());
+                    implicitAnd = false;
                 }
                 tokenizedExpression.add(new NotToken());
             }
@@ -44,6 +45,7 @@ public class Parser
                 if(implicitAnd)
                 {
                     tokenizedExpression.add(new AndToken());
+                    implicitAnd = false;
                 }
                 tokenizedExpression.add(new LeftParenthesisToken());
             }
@@ -60,9 +62,6 @@ public class Parser
                     tokenizedExpression.add(new AndToken());
                 }
                 implicitAnd = true;
-
-                // YOU ARE CURRENTLY WORKING ON MAKING THE PARSER UNDERSTAND IMPLICIT ANDS IN THE EXPRESSION
-                // THIS IS CONTROLLED BY THE IMPLICIT AND FLAG
 
                 String variable = "" + currentChar;
 
@@ -98,6 +97,12 @@ public class Parser
             }
             ++position;
         }
+
+        for(LogToken c : tokenizedExpression)
+        {
+            System.out.print(c.toString()+" ");
+        }
+        System.out.println();
 
         return tokenizedExpression;
     }

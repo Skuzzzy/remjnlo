@@ -3,11 +3,16 @@ public class Main
 
     public static void main(String[] args)
     {
-	    String expression = "a1*b1+c";
-        //boolean[] inputs = {false,false,false};
-        //boolean result = Evaluator.evaluatePostfixExpression(Parser.convertToPostfix(Parser.parseString(expression)),inputs);
-        //System.out.println(result);
+	    String expression = "a*!c(x(!a*c))";
 
+        PrettyPrinting.printMinterms(Evaluator.getMinterms(expression));
+        PrettyPrinting.printMaxterms(Evaluator.getMaxterms(expression));
+
+        System.out.println();
+
+        System.out.println(expression);
+        System.out.println(AlternativeForms.getProductOfSumsString(expression));
+        System.out.println(AlternativeForms.getSumOfProductsString(expression));
 
         PrettyPrinting.printTruthTable(expression);
 
@@ -22,20 +27,7 @@ public class Main
         }
 
         */
-        IndexList minterms = Evaluator.getMinterms(expression);
-        PrettyPrinting.printMinterms(minterms);
-        IndexList maxterms = Evaluator.getMaxterms(expression);
-        PrettyPrinting.printMaxterms(maxterms);
 
-        /*
-        System.out.println(AlternativeForms.getSumOfProductsString(minterms, true));
-        //System.out.println(AlternativeForms.getSumOfProductsString(expression));
-
-
-
-        System.out.println(AlternativeForms.getProductOfSumsString(maxterms, true));
-        //System.out.println(AlternativeForms.getProductOfSumsString(expression));
-        */
 
     }
 }
